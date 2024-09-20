@@ -3,7 +3,7 @@ package time
 import (
 	"database/sql/driver"
 	"fmt"
-	"ginweb/pkg/constant"
+	"github.com/caohui123/goweb/pkg/constant"
 	"time"
 )
 
