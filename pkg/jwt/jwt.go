@@ -3,7 +3,7 @@
 // email xmgtony@gmail.com
 // description jwt实现
 
-package jwt
+package jwtauth
 
 import (
 	"errors"
