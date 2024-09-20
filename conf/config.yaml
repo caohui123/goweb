@@ -1,0 +1,30 @@
+mode: debug #启动模式 debug, release, test
+port: :8089 #启动端口
+app-name: apiserver-gin #服务名称
+url: http://localhost #服务本地地址
+max-ping-count: 10 #自检次数
+jwt-secret: AC59075B964B0715
+language: zh # 项目语言，en或者zh
+database:
+  dsn: root:root@tcp(127.0.0.1:3306)/mall?charset=utf8&parseTime=True&loc=Local
+  maximum-idle-size: 10
+  maximum-pool-size: 30
+  log-mode: true
+# 缓存redis配置
+redis:
+   address: localhost:6379 #redis server地址
+   password:  #redis auth 密码，可选，默认无密码
+   db: 0 #数据库，可选，默认0
+   pool-size: 100 #同一时刻池中最大连接数
+   min-idle-conns: 10 #建立连接时维持的最小空闲连接数量，避免新建连接速度慢
+   idle-timeout: 3000 #最大空闲时长，单位是秒s
+
+log:
+  level: debug  # 日志级别(1:fatal 2:error,3:warn,4:info,5:debug,6:trace)
+  filename: logs/system/system.log
+  web-access-name: logs/access/access.log
+  web-db-name: logs/db/db.log
+  maxsize: 5
+  max_age: 5
+  max_backups: 7
+  console: false

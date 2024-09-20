@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/caohui123/goweb/router"
+	"github.com/caohui123/goweb/internal/router"
 )
 
 func main() {
-	apiRouter := router.NewApiRouter()
+	apiRouter := router.NewAPIRouter()
 	apiRouter.Run(":8080")
 }
