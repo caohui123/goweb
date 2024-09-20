@@ -8,6 +8,7 @@ package jwtauth
 import (
 	"errors"
 	"github.com/caohui123/goweb/pkg/config"
+	"github.com/golang-jwt/jwt/v4"
 	"time"
 )
 

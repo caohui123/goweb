@@ -1,9 +1,10 @@
-package cache
+package rediscache
 
 import (
 	"context"
 	"fmt"
 	"github.com/caohui123/goweb/pkg/config"
+	cache "github.com/caohui123/goweb/pkg/rediscache"
 	"os"
 	"testing"
 	"time"
