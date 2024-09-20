@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/caohui123/goweb/pkg/config"
-	cache "github.com/caohui123/goweb/pkg/rediscache"
+	"github.com/go-redis/cache/v8"
 	"os"
 	"testing"
 	"time"

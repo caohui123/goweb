@@ -3,8 +3,8 @@ package rediscache
 import (
 	"context"
 	"github.com/caohui123/goweb/pkg/config"
+	"github.com/go-redis/cache/v8"
 	"github.com/go-redis/redis/v8"
-	"github.com/rogpeppe/go-internal/cache"
 	"time"
 )
 

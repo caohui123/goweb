@@ -12,6 +12,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/natefinch/lumberjack v2.0.0+incompatible
+	github.com/rogpeppe/go-internal v1.9.0
 	github.com/spf13/viper v1.19.0
 	go.uber.org/zap v1.21.0
 	gorm.io/driver/mysql v1.5.7
