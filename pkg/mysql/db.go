@@ -2,7 +2,6 @@ package mysql
 
 import (
 	"fmt"
-	"github.com/caohui123/goweb/internal/app/model"
 	"github.com/caohui123/goweb/pkg/config"
 	lg "github.com/caohui123/goweb/pkg/logger"
 	"go.uber.org/zap"
@@ -32,7 +31,7 @@ func InitMysql(cfg *config.DBConfig) *gorm.DB {
 			log.Fatalln(err)
 		}
 	})
-	MysqlDb.AutoMigrate(&model.User{})
+	MysqlDb.AutoMigrate()
 	return MysqlDb
 }
 
