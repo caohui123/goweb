@@ -6,16 +6,17 @@ type APIRouter struct {
 	Router *gin.Engine
 }
 
-func NewAPIRouter() *APIRouter {
-	router := gin.Default()
-	apiRouter := APIRouter{Router: router}
-	apiRouter.initRoutes()
-
-	return &apiRouter
+func NewAPIRouter(r *gin.Engine) *gin.Engine {
+	api := &APIRouter{
+		Router: r,
+	}
+	return api.initRoutes(r)
 }
 
-func (api *APIRouter) initRoutes() {
-	api.Router.GET("/ping", api.ping)
+func (api *APIRouter) initRoutes(r *gin.Engine) *gin.Engine {
+	r.GET("/ping", api.ping)
+	RegisterRoutes(r)
+	return api.Router
 }
 
 func (api *APIRouter) ping(c *gin.Context) {

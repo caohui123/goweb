@@ -99,24 +99,17 @@ func removeTopStruct(fields map[string]string) map[string]interface{} {
 	return res
 }
 
-func ErrorRes(err error) error {
-	_, ok := err.(validator.ValidationErrors)
-	if !ok {
-		//错误可能有多个 遍历 返回一个
-		for _, v := range err.(validator.ValidationErrors) {
-			return errors.New(v.Translate(trans))
-		}
+func ErrorRes(err error) map[string]string {
+	for _, v := range err.(validator.ValidationErrors) {
+		//return v.Field() .v.Translate(trans)
+		return map[string]string{v.Field(): v.Translate(trans)}
 	}
-	return nil
+	return map[string]string{"": ""}
 }
 
 func ErrRespString(err error) error {
-	errs, ok := err.(validator.ValidationErrors)
-	if !ok {
-		return err // 翻译校验错误提示
-	}
-	for _, value := range removeTopStruct(errs.Translate(trans)) {
-		return errors.New(value.(string))
+	for _, v := range err.(validator.ValidationErrors) {
+		return errors.New(v.Translate(trans))
 	}
 	return nil
 }
