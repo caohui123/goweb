@@ -99,12 +99,12 @@ func removeTopStruct(fields map[string]string) map[string]interface{} {
 	return res
 }
 
-func ErrorRes(err error) map[string]string {
+func ErrorRes(err error) string {
 	for _, v := range err.(validator.ValidationErrors) {
-		//return v.Field() .v.Translate(trans)
-		return map[string]string{v.Field(): v.Translate(trans)}
+		return v.Translate(trans)
+		//return map[string]string{v.Field(): v.Translate(trans)}
 	}
-	return map[string]string{"": ""}
+	return ""
 }
 
 func ErrRespString(err error) error {
